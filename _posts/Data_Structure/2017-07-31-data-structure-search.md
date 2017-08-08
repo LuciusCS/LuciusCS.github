@@ -7,7 +7,7 @@ tags: [数据结构]
 main: 
 modified: 2017-07-31
 image:
-  feature: /head/abstract-2.jpg
+  feature: abstract-2.jpg
 ---
 
 ### 折半查找

@@ -7,7 +7,7 @@ tags: [数据结构]
 main: 
 modified: 2017-08-02
 image:
-  feature: /head/abstract-2.jpg
+  feature: abstract-2.jpg
 ---
 
 ## 插入排序有直接插入排序、折半插入排序、希尔排序等
@@ -17,7 +17,7 @@ image:
 直接插入排序的核心是不断将后面的数字，不断插入前面已经排好序的数列中；在进行插入排序时需要不断将需要插入的元素与前面已经排好序的元素进行比较，并不断将已排好序的元素后移。
 
 {% capture images %}
-	{{ site.baseurl }}/source/img/20170731/insertsort.gif
+	/images/20170731/insertsort.gif
 {% endcapture %}
 {% include gallery images=images caption="" cols=1 %}
 
@@ -112,7 +112,7 @@ void BInsertSort(int array[], int length) {
 
 
 {% capture images %}
-	{{ site.baseurl }}/source/img/20170731/001.png
+	/images/20170731/001.png
 {% endcapture %}
 {% include gallery images=images caption="" cols=1 %}
 
