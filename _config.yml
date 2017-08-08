@@ -5,12 +5,13 @@ tags: "Lucius,蛰伏,赵翰超,PAT,blog"
 
 #owner/author information
 owner:
-    name: Lucius
-    nickname: 蛰伏
+    name: 
+    nickname: 
     avatar:
-    bio: 一路怼代码
+    bio: 蛰伏于原始森林，复古进化怼代码中
     email: LuciusZhao.CS@gmail.com
-    github: https://github.com/LuciusCS
+    github: LuciusCS
+    facebook: hanchao.zhao.1
     
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones

@@ -314,7 +314,7 @@ a {
 }
 .page-sidebar section {
     margin-top: 0px;
-    padding: 0px 7px ;
+    padding: 0px 10px 2px 2px;
     border-bottom: 1px solid #e7eaf1
 }
 
@@ -327,7 +327,7 @@ a {
     padding-bottom: 0
 }
 .tags-card {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /*用于主页的个人信息*/
@@ -358,86 +358,52 @@ a {
 
 .author-card .bio p {
     font-size: 14px;
-    line-height: 20px
+    line-height: 20px;
+    color: darkgrey;
+    margin-bottom: 10px;
 }
 
-.author-card .sns-links {
-    margin-top: 14px;
-    cursor: default
+.sns-card {
+
 }
 
-.author-card .sns-links li {
-    position: relative;
-    display: inline-block;
-    width: 26px;
-    height: 26px
+.sns-card ul{
+    margin-top: 20px;
 }
 
-.author-card .sns-links li a {
-    display: inline-block
+.sns-card li {
+    margin-top: 5px;
 }
-
-.author-card .sns-links li .iconfont {
-    font-size: 22px;
-    line-height: 30px
-}
-
-.author-card .sns-links li .iconfont {
+.sns-card li a {
+    font-size: 15px;
     color: #b8bdc3;
-    transition: .2s
 }
 
-.author-card .sns-links li .iconfont:hover {
-    color: #7b848f
+.sns-card li .iconfont {
+    font-size: 17px;
+    line-height: 25px;
+    transition: .1s
+}
+.sns-card li :hover {
+    color: darkgrey;
 }
 
-.author-card .sns-links li .icon-weibo:hover {
-    color: #f85555
-}
 
-.author-card .sns-links li .icon-zhihu:hover {
-    color: #1892f5
-}
-
-.author-card .sns-links li .icon-twitter:hover {
+.sns-card li .icon-twitter:hover {
     color: #39a6f8
 }
 
-.author-card .sns-links li .icon-instagram:hover {
+.sns-card li .icon-instagram:hover {
     color: #303030
 }
 
-.author-card .sns-links li .icon-juejin:hover {
-    color: #1682fc
-}
 
-.author-card .sns-links li .icon-github:hover {
+.sns-card li .icon-github:hover {
     color: #575757
 }
 
-.author-card .sns-links li .icon-facebook:hover {
-    color: #3d5a9a
-}
 
-.author-card .sns-links li .icon-dribble:hover {
-    color: #f26798
-}
 
-.author-card .sns-links li .icon-jianshu:hover {
-    color: #ea6f5a
-}
-
-.author-card .sns-links li .icon-uicn:hover {
-    color: #3498db
-}
-
-.author-card .sns-links li .icon-linkedin:hover {
-    color: #3181be
-}
-
-.author-card .sns-links li .icon-medium:hover {
-    color: #0be370
-}
 
 .tag {
     display: inline-block;
@@ -548,13 +514,20 @@ a {
 
 .tags-list p .tag {
     margin-bottom: 12px;
-    height: 30px;
+    height: 25px;
     font-size: 20px;
     border: 0.5px solid rgba(255, 255, 255, 0.8);
     border-radius: 999em;
     border-color: gainsboro;
     color: lightsteelblue;
 }
+
+.tags-list p .tag:hover{
+    border-color: lightskyblue;
+    color: lightskyblue;
+}
+
+
 
 .tags-list li .tag-name {
     display: block;

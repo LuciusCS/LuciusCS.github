@@ -34,32 +34,6 @@ header-img: "source/img/002.jpeg"
         {% endfor %}
        {% include paginator.html %}
     </div>
-    <aside class="page-sidebar">
-	  {% if site.recommend-tags and site.tags.size>0 %}
-	   <h5>FEATURED TAGS</h5>
-        <section class="tags-card">
-			<br>
-            {% for tag in site.tags %}
-            {% if forloop.index > site.recommend-tags-size %}
-            {% break %}
-            {% endif %}
-            <a href="/page/tags#{{ tag[0] }}" class="tag">{{ tag[0]}}</a>
-            {% endfor %}
-        </section>
-        {% endif %}
-		  <h5>ABOUT ME</h5>
-        <section class="author-card">
-		  
-            <div class="avatar">
-                <img src="{{ site.baseurl }}/avatar.jpg" alt="">
-            </div>
-            <div class="author-name" rel="author">{{ site.owner.name}}</div>
-            <div class="bio">
-                <p>{{ site.owner.bio }}</p>
-            </div>
-        </section>
-
-      
-    </aside>
+      {% include info.html%}
 </main>
 {% include footer.html %}
