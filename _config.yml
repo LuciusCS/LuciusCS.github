@@ -42,6 +42,8 @@ kramdown:
 # Amount of post to show on home page
 paginate: 5
 
+google_analytics: UA-104209742-1
+
 sass:
     sass_dir: _sass
     style: compressed
