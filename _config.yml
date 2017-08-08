@@ -1,0 +1,59 @@
+#Site setting
+title: Lucius Blog
+description: 程序猿？代码：香蕉
+tags: "Lucius,蛰伏,赵翰超,PAT,blog"
+
+#owner/author information
+owner:
+    name: Lucius
+    nickname: 蛰伏
+    avatar:
+    bio: 一路怼代码
+    email: LuciusZhao.CS@gmail.com
+    github: https://github.com/LuciusCS
+    
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/New_York
+
+baseurl: ''
+
+# setting readeing for each page
+reading_time: true
+words_per_minute: 200
+
+ # tags
+recommend-tags: true 
+recommend-tags-size: 9
+
+
+# Markdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+# Amount of post to show on home page
+paginate: 5
+
+sass:
+    sass_dir: _sass
+    style: compressed
+ 
+# gems before
+plugins:
+    [jekyll-paginate]
+    
+exclude:
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - package.json

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+  {% include head.html %}
+  {% include nav.html %}
+<body>
+<header class="page-banner post-header" >
+    <div class="post-wrapper">
+        <div class="post-tags">
+            {% if page.tags.size > 0 %}
+            {% for tag in page.tags  %}
+            <a href="{{site.baseurl}}/page/tags#{{ tag }}" class="post-tag">{{ tag }}</a>
+            {% endfor %}
+            {% endif %}
+        </div>
+       	 <div class="post-meta">
+		 <h1>「{{ page.title }}」</h1>
+		 </div>
+		
+		 <div class="post-meta ">
+                  <span class="post-meta-item" datetime="{{ page.date | date:"%y-%m-%d" }}">Posted on {{ page.date | date_to_string }}</span>
+                    {% if site.reading_time %}
+                       <span class="reading-time post-meta-item">
+                         <i class="fa fa-clock-o"></i>
+                         {% include read-time-index.html %}
+                     </span><!-- /.entry-reading-time -->
+                  {% endif %}
+        </div><!-- /.entry-meta -->
+    </div>
+	   {% if page.image %}
+    <div class="filter"></div>
+
+    <div class="post-cover" style="background: url('{{ site.baseurl }}/source/img/{{ page.image.feature }}') center no-repeat; background-size: cover;">
+       {% else %}
+	      <div class="filter"></div>
+    <div class="post-cover" style="background: url('{{ site.baseurl }}/source/img/head/abstract-5.jpg') center no-repeat; background-size: cover;">
+	{% endif %}
+   
+</header>
+  <div class="post-content">
+      {% if page.subtitle %}
+      <h2 class="post-subtitle">{{ page.subtitle }}</h2>
+      {% endif %}
+      <article class="markdown-body">
+          {{ page.content }}
+      </article>
+	    {% if site.related_posts.size > 0 %}{% include read-more.html %}{% endif %}
+  </div>
+  {% include footer.html %}
+  </body>
+</html>

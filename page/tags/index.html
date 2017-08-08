@@ -1,0 +1,40 @@
+---
+title: Tags
+layout: main
+description: 寻找？
+header-img: "/source/img/008.jpg"
+---
+
+{% include nav.html %}
+<div class="page-banner tags-banner">
+      <h1>Tags</h1>
+	 <h3>{{page.description}}</h3>
+     {% if page.header-img %}
+    <img src="{{ site.baseurl }}{{ page.header-img }}" alt="">
+    {% endif %}
+</div>
+
+
+<main class="tags-content">
+    <ul class="tags-list">
+        <p>
+        {% if site.recommend-tags and site.tags.size>0 %}
+            {% for tag in site.tags %}
+            <a href="#{{ tag[0] }}" class="tag">{{ tag[0]}}</a>
+            {% endfor %}
+        {% endif %}
+        </p>
+        {% for tag in site.tags %}
+        <li>
+            <span class="tag-name" id="{{ tag[0] }}">「{{ tag[0] }}」</span>
+            {% for post in tag[1] %}
+            <a class="tag-post" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+            {% endfor %}
+        </li>
+        
+        </div>
+        {% endfor%}
+    </ul>
+</main>
+
+{% include footer.html %}

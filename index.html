@@ -1,0 +1,65 @@
+---
+layout: main
+header-img: "source/img/002.jpeg"
+---
+
+{% include nav.html %}
+<div class="page-banner home-banner">
+    <h1>{{ site.description}}</h1>
+    <h2>{{ page.description }}</h2>
+    {% if page.header-img %}
+    <img class="header-img" src="{{ site.baseurl }}/{{ page.header-img }}" alt="">
+    {% endif %}
+</div>
+
+<main class="page-container home-content">
+    <div class="article-list">
+        {% for post in paginator.posts %}
+        <article class="article-item">
+            <section class="post-preview">
+               <a class="post-link" href="{{ post.url }}" title="{{ post.title }}"></a>
+                <h2 class="post-title">{{ post.title }}</h2>
+				<p class="post-brief">{{ post.content | strip_html | strip_newlines | truncate: 200}}</p>
+            </section>  
+			 <div class="post-meta">
+                  <span class="post-mate">Posted on {{ post.date | date: "%B %d, %Y" }}</span>
+                    {% if site.reading_time %}
+                  <span class="reading-time">
+                  <i class="fa fa-clock-o"></i>
+                 {% include read-time-index.html %}
+                 </span><!-- /.entry-reading-time -->
+                {% endif %}
+              </div><!-- /.entry-meta -->
+        </article>
+        {% endfor %}
+       {% include paginator.html %}
+    </div>
+    <aside class="page-sidebar">
+	  {% if site.recommend-tags and site.tags.size>0 %}
+	   <h5>FEATURED TAGS</h5>
+        <section class="tags-card">
+			<br>
+            {% for tag in site.tags %}
+            {% if forloop.index > site.recommend-tags-size %}
+            {% break %}
+            {% endif %}
+            <a href="/page/tags#{{ tag[0] }}" class="tag">{{ tag[0]}}</a>
+            {% endfor %}
+        </section>
+        {% endif %}
+		  <h5>ABOUT ME</h5>
+        <section class="author-card">
+		  
+            <div class="avatar">
+                <img src="{{ site.baseurl }}/avatar.jpg" alt="">
+            </div>
+            <div class="author-name" rel="author">{{ site.owner.name}}</div>
+            <div class="bio">
+                <p>{{ site.owner.bio }}</p>
+            </div>
+        </section>
+
+      
+    </aside>
+</main>
+{% include footer.html %}

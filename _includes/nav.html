@@ -1,0 +1,16 @@
+<header class="page-navigation">
+	     <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <nav class="page-nav">
+        <ul>		   
+		   	{% for link in site.data.navigation %}
+	    {% if link.url contains 'http' %}
+	        {% assign domain = '' %}
+	        {% else %}
+	        {% assign domain = site.url %}
+	    {% endif %}
+	    <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+	  {% endfor %}
+        </ul>
+    </nav>
+</header>
+

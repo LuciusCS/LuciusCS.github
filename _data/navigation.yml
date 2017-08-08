@@ -1,0 +1,10 @@
+# Menu navigation links
+
+- title: main
+  url: /
+
+- title: Tags
+  url: /page/tags/
+  
+- title: About
+  url: /page/about/
