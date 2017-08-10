@@ -40,7 +40,7 @@ kramdown:
   enable_coderay: false
 
 # Amount of post to show on home page
-paginate: 5
+paginate: 10
 
 google_analytics: UA-104209742-1
 
