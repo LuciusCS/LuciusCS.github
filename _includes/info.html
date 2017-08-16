@@ -24,7 +24,6 @@
         </section>
 		</a>
 	
-		
 		<section class="sns-card">
 		 		<ul>
 				{% if site.owner.email %}<li>
@@ -59,4 +58,19 @@
 				</li>{% endif %}
 			</ul>
 	   </section>
+	   <!--
+	    <h5>CATEGOTIES</h5>
+	     <section class="category-card">
+          <ul>
+             {% for category in site.categories %}
+            <li><a href="{{ site.baseurl}}/page/categories/{{ category[0] }}">
+            <span class="category-name"> {{ category[0] }}    </span>类别名
+            <span class="category-size">{{ category[1].size }}</span> 该类下 post 数量 
+            <!-- <=> {{ site.categories[category].size }} 
+            </a></li>
+          {% endfor %}
+           </ul>
+        </section>
+		-->
+	   
     </aside>

@@ -364,7 +364,7 @@ a {
 }
 
 .sns-card {
-
+    margin-bottom: 10px;
 }
 
 .sns-card ul{
@@ -402,8 +402,30 @@ a {
     color: #575757
 }
 
+.category-card {
+    width: 100%;
+}
+
+.category-card li{
+
+    width: 100%;
+    margin: 5px;
+}
+
+.category-card li a{
+    width: 100%;
+    color: darkgrey;
+}
 
 
+
+/*用于云标签的使员工*/
+.tag-cloud {
+    position: fixed;
+    width: 240px;
+    height: 100px;
+    
+}
 
 .tag {
     display: inline-block;
@@ -436,6 +458,7 @@ a {
 /*用于tag页面的布局*/
 .tags-banner {
     height: 230px;
+    width: 100%;
     background-color: transparent;
     overflow: hidden;
     color: #fff;

@@ -15,7 +15,7 @@ owner:
     
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone: America/New_York
 
 baseurl: ''
 
@@ -40,7 +40,7 @@ kramdown:
   enable_coderay: false
 
 # Amount of post to show on home page
-paginate: 10
+paginate: 8
 
 google_analytics: UA-104209742-1
 
