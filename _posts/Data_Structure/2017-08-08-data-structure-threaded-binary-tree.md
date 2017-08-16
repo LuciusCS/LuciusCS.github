@@ -4,6 +4,7 @@ title: "线索化二叉树"
 description: ""
 type: data_structure
 tags: [数据结构]
+categories: [pat]
 main: 
 finish: true
 modified: 2017-08-04
