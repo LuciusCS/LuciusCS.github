@@ -1,0 +1,39 @@
+---
+layout: main
+header-img: "source/img/002.jpeg"
+---
+
+{% include nav.html %}
+<div class="page-banner home-banner">
+    <h1>{{ site.description}}</h1>
+    <h2>{{ page.description }}</h2>
+    {% if page.header-img %}
+    <img class="header-img" src="{{ site.baseurl }}/{{ page.header-img }}" alt="">
+    {% endif %}
+</div>
+
+<main class="page-container home-content">
+    <div class="article-list">
+        {% for post in paginator.posts %}
+        <article class="article-item">
+            <section class="post-preview">
+               <a class="post-link" href="{{ post.url }}" title="{{ post.title }}"></a>
+                <h2 class="post-title">{{ post.title }}</h2>
+				<p class="post-brief">{{ post.content | strip_html | strip_newlines | truncate: 200}}</p>
+            </section>  
+			 <div class="post-meta">
+                  <span class="post-mate">Posted on {{ post.date | date: "%B %d, %Y" }}</span>
+                    {% if site.reading_time %}
+                  <span class="reading-time">
+                  <i class="fa fa-clock-o"></i>
+                 {% include read-time-index.html %}
+                 </span><!-- /.entry-reading-time -->
+                {% endif %}
+              </div><!-- /.entry-meta -->
+        </article>
+        {% endfor %}
+       {% include paginator.html %}
+    </div>
+      {% include info.html%}
+</main>
+{% include footer.html %}

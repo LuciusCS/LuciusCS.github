@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>TagCanvas jQuery example</title>
+	<!--[if lt IE 9]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+	<!--<script src="jquery-1.4.2.min.js" type="text/javascript"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="jquery.tagcanvas.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		//for more options go here: http://www.goat1000.com/tagcanvas-options.php
+		$(document).ready(function() {
+			if (!$('#myCanvas').tagcanvas({
+				
+				shape: "vcylinder", //"vcylinder", "sphere", "hring ", "vring",
+				clickToFront: 800,
+				pulsateTime: 3,
+				
+				// textFont: 'Impact,"Arial Black",sans-serif',
+				textColour: null,
+				outlineColour: '#ff00ff',
+				textHeight: 25,
+
+				weight: true,
+				weightMode : "colour",
+				//weightGradient: {0:'#f00', 0.33:'#ff0', 0.66:'#0f0', 1:'#00f'},
+				weightSize : 1,
+				weightSizeMax : 8,
+
+
+				reverse: true,
+				depth: 0.6,
+				maxSpeed: 0.05,
+				initial: [.15, -.12]
+
+					
+				}, 'tags')) {
+				// something went wrong, hide the canvas container
+				$('#myCanvasContainer').hide();
+			}
+		});
+
+	</script>
+</head>
+
+
+<body>
+	<h1>TagCanvas jQuery example page</h1>
+	<div id="myCanvasContainer">
+		<canvas width="300" height="300" id="myCanvas">
+        <p>Not supported in this browser</p>
+      </canvas>
+	</div>
+	<div id="tags">
+		<ul>
+			<li><a href="http://www.google.com" target="_blank">Google</a></li>
+			<li><a style="font-size:13px" href="#">Fish</a></li>
+			<li><a style="font-size:12px" href="#">Chips</a></li>
+			<li><a style="font-size:1px" href="#">Salt</a></li>
+			<li><a style="font-size:2px" href="/vinegar">Vinegar</a></li>
+			<li><a style="font-size:3px" href="http://www.google.com" target="_blank">Google</a></li>
+			<li><a style="font-size:4px" href="#">Fish</a></li>
+			<li><a style="font-size:5px" href="#">Chips</a></li>
+			<li><a style="font-size:6px" href="#">Salt</a></li>
+			<li><a style="font-size:7px" href="/vinegar">Vinegar</a></li>
+			<li><a style="font-size:8px" href="http://www.google.com" target="_blank">Google</a></li>
+			<li><a style="font-size:9px" href="#">Fish</a></li>
+			<li><a style="font-size:10px" href="#">Chips</a></li>
+			<li><a style="font-size:2px" href="#">Salt</a></li>
+			<li><a style="font-size:12px" href="/vinegar">Vinegar</a></li>
+			<li><a style="font-size:12px" href="http://www.google.com" target="_blank">Google</a></li>
+			<li><a style="font-size:5px" href="#">Fish</a></li>
+			<li><a style="font-size:4px" href="#">Chips</a></li>
+			<li><a style="font-size:3px" href="#">Salt</a></li>
+			<li><a style="font-size:6px" href="/vinegar">Vinegar</a></li>
+			<li><a style="font-size:3px" href="http://www.google.com" target="_blank">Google</a></li>
+			<li><a style="font-size:7px" href="#">Fish</a></li>
+			<li><a style="font-size:5px" href="#">Chips</a></li>
+			<li><a style="font-size:5px" href="#">Salt</a></li>
+			<li><a style="font-size:7px" href="/vinegar">Vinegar</a></li>
+		</ul>
+	</div>
+</body>
+
+</html>
