@@ -1,8 +1,12 @@
 <nav class="pagination">
     <div class="page-links">
+	
+	   {% if link.url contains 'http' %}
+	        {% assign domain = '' %}
+	    {% endif %}
         {% if paginator.previous_page %}
             {% if paginator.previous_page == 1 %}
-            <a href="{{ site.baseurl }}" class="page-link" title="Previous Page">&laquo;</a>
+            <a href="{{domain}}" class="page-link" title="Previous Page">&laquo;</a>
             {% else %}
             <a href="/page{{ paginator.previous_page }}/" class="page-link" title="Previous Page">&laquo;</a>
             {% endif %}
@@ -15,7 +19,7 @@
         {% if page == paginator.page %}
         <span class="page-link page-num active">{{ page }}</span>
         {% elsif page == 1 %}
-        <a href="{{ site.baseurl }}" class="page-link page-num">{{ page }}</a>
+        <a href="{{ domain}}" class="page-link page-num">{{ page }}</a>
         {% else %}
         <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}" class="page-link page-num">{{ page }}</a>
         {% endif %}
