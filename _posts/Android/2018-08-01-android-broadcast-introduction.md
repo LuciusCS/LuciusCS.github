@@ -45,7 +45,6 @@ Android应用可以向系统和其他应用发送或者接收广播信息，手�
 </receiver>
 
 ```
-
 ### 2、继承BroadcastReceiver类
 
 当用户手机充电时，将会弹出充电的提示。
@@ -58,13 +57,9 @@ public class BroadcastReceiverTest extends BroadcastReceiver {
         Toast.makeText(context,intent.getAction().toString(),Toast.LENGTH_LONG).show();
     }
 }
-
-````
-
+```
 ## 通过Context-register的方式注册Receiver
-
 ###1、创建一个BroadcastReceiverTest实例
-
 ```
 BroadcastReceiverTest br=new BroadcastReceiverTest()
 ```
@@ -72,12 +67,10 @@ BroadcastReceiverTest br=new BroadcastReceiverTest()
 ###2、创建IntentFilter,通过调用registerReceiver(BroadcastReceiver, IntentFilter)方法注册广播
 
 ```java
-
 //用于监控网络的状态变化
 IntentFilter intentFilter=new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
 intentFilter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
 this.registerReceiver(br,intentFilter);
-
 ```
 
 * 注：通过Context-register的方式注册广播，只要注册位置的Context没有被注销，那么它就可以收到广播。如果在Application的位置注册广播，那么只要App在运行，就可以收到广播信息。
@@ -97,7 +90,6 @@ BroadcastReceiver无论是否是运行状态，都会影响到它所在的进程
 因此在broadcast的receiver中不能启动长时间运行的后台进程，在执行完onReceiver()方法之后，系统在任何时间都可以杀死进程。为了避免进程被杀死，可以调用goAsync()方法(当需要在后台执行一些耗时操作)，或者使用JobService，通过receiver使用JobScheduler，这样系统就会知道进程正在执行任务。
 
 ```java
-
 public class BroadcastReceiverTest extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -131,12 +123,10 @@ public class BroadcastReceiverTest extends BroadcastReceiver {
 **发送广播的例子**
 
 ```java
-
 Intent intent = new Intent();
 intent.setAction("com.example.broadcast.MY_NOTIFICATION");
 intent.putExtra("data","Notice me senpai!");
 sendBroadcast(intent);
-
 ```
 
 广播发送的内容被包裹在Intent对象中，intent的action字符串需要唯一确定广播事件，可以在intent中通过putExtra(String, Bundle) 方法携带更多的信息。也可以限制广播发送到组织中的一系列应用，通过intent调用setPackage(String)方法。
@@ -163,7 +153,6 @@ sendBroadcast(new Intent("com.example.NOTIFY"), Manifest.permission.SEND_SMS);
 ```
 
 ### 带有权限的广播接收
-
 无论是使用registerReceiver(BroadcastReceiver, IntentFilter, String, Handler) 还是在manifest中使用标签 <receiver>来注册广播，当对receiver进行权限限制时，只能接收到已经获取到已经取得权限的App的广播。**发送广播的App一定要取得相应的权限**
 
 例如：在manifest文件中添加权限限制。
@@ -181,7 +170,6 @@ sendBroadcast(new Intent("com.example.NOTIFY"), Manifest.permission.SEND_SMS);
 使用context-register方式注册广播权限限制
 
 ```java
-
 IntentFilter filter = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
 registerReceiver(receiver, filter, Manifest.permission.SEND_SMS, null );
 ```
